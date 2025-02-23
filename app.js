@@ -46,7 +46,9 @@ app.get('/movies', (req, res) => {
   }
   res.json(movies)
 })
-
+app.get('/', (req, res) => {
+  res.send({message: "Welcome"})
+})
 app.get('/movies/:id', (req, res) => {
   const { id } = req.params
   const movie = movies.find(movie => movie.id === id)
